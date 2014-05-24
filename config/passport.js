@@ -61,7 +61,7 @@ module.exports = function(passport) {
 
                 // all is well, return user
                 else
-                    return done(null, false, req.flash('loginMessage', 'Fuck Everything!'));
+                    return done(null, user);
             });
         });
 
