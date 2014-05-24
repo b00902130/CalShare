@@ -8,11 +8,11 @@
 		body 		{ padding-top:80px; }
 	</style>
 </head>
-<body>
+<body style="background:url(https://dl.dropboxusercontent.com/u/79375953/WebSites/iphone_and_ipad-wallpaper-1280x800.jpg);">
 <div class="container">
 <div class="col-sm-6 col-sm-offset-3">
 
-	<h1><span class="fa fa-sign-in"></span> Signup</h1>
+	<h1 style="color:white;font-weight:200;"> Signup</h1>
 
 	<% if (message.length > 0) { %>
 		<div class="alert alert-danger"><%= message %></div>
@@ -21,25 +21,25 @@
 	<!-- LOGIN FORM -->
 	<form action="/signup" method="post">
 		<div class="form-group">
-			<label>Email</label>
-			<input type="text" class="form-control" name="email">
+			<!-- <label>Email</label> -->
+			<input type="text" class="form-control" name="email" placeholder="Email">
 		</div>
 		<div class="form-group">
-			<label>Password</label>
-			<input type="password" class="form-control" name="password">
+			<!-- <label>Password</label> -->
+			<input type="password" class="form-control" name="password" placeholder="Password">
 		</div>
 		<div class="form-group">
-			<label>Google Calendar ID</label>
-			<input type="text" class="form-control" name="calendarID">
+			<!-- <label>Google Calendar ID</label> -->
+			<input type="text" class="form-control" name="calendarID" placeholder="Calendar ID">
 		</div>
 
-		<button type="submit" class="btn btn-warning btn-lg">Signup</button>
+		<button type="submit" class="btn btn-info btn-lg">Signup</button>
 	</form>
 
 	<hr>
 
-	<p>Already have an account? <a href="/login">Login</a></p>
-	<p>Or go <a href="/">home</a>.</p>
+	<span style="color:white;">Already have an account? </span><a class="btn btn-primary" href="/login">Login</a>
+	<span style="color:white;">Or go  </span><a class="btn btn-success" href="/">home</a>
 
 
 	</div>
