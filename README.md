@@ -1,4 +1,4 @@
-# 2014 HackathonNTU - Hackevrything
+# 2014 HackathonNTU - HackEvrything
 
 Member: fuck1 fuck2 fuck3 fuck4
 
