@@ -8,6 +8,7 @@ var port     = process.env.PORT || 8081;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+var User 	 = require('./app/models/user');	
 
 var path         = require('path');
 var morgan       = require('morgan');
@@ -38,6 +39,17 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/users', function(req, res){
+	console.log("session: " + req.user.local.email);
+	User.find({}, function(err, users){
+		if(err){
+			console.log("user error!");
+			throw err;
+		}
+		res.json(users);
+	});
+});
 
 // launch ======================================================================
 app.listen(port);

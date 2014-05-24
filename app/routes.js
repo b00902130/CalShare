@@ -15,10 +15,6 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	app.post('/hahaCalID',function(req, res){
-		calID = req.body.calendarID;
-	})
-
 	// LOGOUT ==============================
 	app.get('/logout', function(req, res) {
 		req.logout();
