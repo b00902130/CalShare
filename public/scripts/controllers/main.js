@@ -30,13 +30,13 @@ angular.module('calenshareApp')
     }
 
     var color = ColorGenerator.generate(),
-        calendar_id = user.local.calendarID;
-
+        calendar_id = user.local.calendarID,
+        sevenDaysAgo = new Date( Date.now() - 86400 * 7 * 1000 ).toISOString();
     $scope.calendars.push({owner: user, color: color});
 
-    $http.get('https://www.googleapis.com/calendar/v3/calendars/' +
-              calendar_id +
-              '/events?singleEvents=true&maxResults=2500&key=AIzaSyBQal2rNhP5SRkU5hZytY7Yb8nYc5Q1nrc').success(function(response){
+    $http.get('https://www.googleapis.com/calendar/v3/calendars/' + calendar_id +
+              '/events?singleEvents=true&timeMin=' + sevenDaysAgo +
+              '&maxResults=2500&key=AIzaSyBQal2rNhP5SRkU5hZytY7Yb8nYc5Q1nrc').success(function(response){
       var notCancelled = function(event) {
         return event.status !== 'cancelled';
       };
