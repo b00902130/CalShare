@@ -1,18 +1,16 @@
 <div class="ui red large vertical demo sidebar menu" ui-sidebar>
-  <form ng-submit="addUser(username, calendar_id)">
-    <input type="text" placeholder="username"    class="form-control" ng-model="username">
-    <input type="text" placeholder="calendar_id" class="form-control" ng-model="calendar_id">
+  <form ng-submit="addUser(user)">
+    <input type="text" placeholder="email"    class="form-control" ng-model="user" typeahead="user as user.local.email for user in users | filter:$viewValue | limitTo:8">
     <input type="submit" value="Submit" class="form-control">
   </form>
   <div class="item" ng-repeat="cal in calendars" style="background-color: {{cal.color}}; color: white">
-    <h3>{{cal.username}}</h3>
+    <h3>{{cal.owner.local.email}}</h3>
   </div>
 </div>
 
 <div class="header">
   <ul class="nav nav-pills pull-right">
     <li><a ng-click="toggleSidebar()">設定使用者</a></li>
-    <li><a href="/users">Users</a></li>
   </ul>
   <h3 class="text-muted">CalShare</h3>
 </div>

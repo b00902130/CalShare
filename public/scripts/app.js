@@ -4,5 +4,6 @@ angular.module('calenshareApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.calendar'
+  'ui.calendar',
+  'ui.bootstrap'
 ]);

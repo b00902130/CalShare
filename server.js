@@ -41,7 +41,6 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/users', function(req, res){
-	console.log("session: " + req.user.local.email);
 	User.find({}, function(err, users){
 		if(err){
 			console.log("user error!");
