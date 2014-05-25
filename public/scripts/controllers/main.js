@@ -23,9 +23,16 @@ angular.module('calenshareApp')
     $rootScope.$broadcast('toggle-sidebar');
   };
 
-  $scope.addUser = function(username, calendar_id) {
-    var color = ColorGenerator.generate();
-    $scope.calendars.push({username: username, calendar_id: calendar_id, color: color});
+  $scope.addUser = function(user) {
+    if (typeof user === "string") {
+      console.log('no user match.');
+      return;
+    }
+
+    var color = ColorGenerator.generate(),
+        calendar_id = user.local.calendarID;
+
+    $scope.calendars.push({owner: user, color: color});
 
     $http.get('https://www.googleapis.com/calendar/v3/calendars/' +
               calendar_id +
@@ -45,8 +52,9 @@ angular.module('calenshareApp')
   };
 
   $scope.eventSources = [];
-  // $http.get('/scripts/events.json').success(function(events){
-  //   $scope.eventSources = [events];
-  // });
+
+  $http.get('/users').success(function(users){
+    $scope.users = users;
+  });
 
 });
