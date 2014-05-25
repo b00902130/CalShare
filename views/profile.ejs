@@ -1,44 +1,57 @@
 <!doctype html>
 <html>
 <head>
-	<title>Node Authentication</title>
+	<title>Profile!</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
 		body 		{ padding-top:80px; word-wrap:break-word; }
 	</style>
 </head>
-<body>
-
+<body style="background:url(https://dl.dropboxusercontent.com/u/79375953/WebSites/compasses_set-wallpaper-1280x960.jpg);">
 
 	<div class="container">
 		<div class="page-header text-center">
-			<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-			<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+			<h1 style="font-size:46px;color:white;font-weight:300;"> Profile Page</h1>
+			
 		</div>
 
 		<div class="row">
 
 			<!-- LOCAL INFORMATION -->
 			
-			<div class="well text-align:center;">
-				<h3><span class="fa fa-user"></span> Local</h3>
+			<!-- <div class="well text-align:center;"> -->
+				<h3 style="color:#FF9933;font-weight:200;">User Name</h3>
 
 				<% if (user.local.email) { %>
 					<p>
-						<strong>id</strong>: <%= user._id %><br>
+						<h2 style="background-color: rgba(255,255,255,0.2);color:white;font-weight:200;"><%= user.local.email %></h2>
+						<div class="list-group">
+						  <!-- <a style="font-size:20px;" href="#" class="list-group-item list-group-item-success"><%= user._id %></a> -->
+						  <!-- <label>User Name</label> -->
+						  <!-- <a style="font-size:20px;" href="#" class="list-group-item list-group-item-info"><%= user.local.email %></a> -->
+						  <!-- <a href="#" class="list-group-item list-group-item-warning"><%= user.local.password %></a> -->
+  						  <!-- <h2 style="color:white;font-weight:100;"><%= user.local.email %></h2> -->
+		  				  <h3 style="color:#FF9933;font-weight:200;">Calendar ID</h3>
+
+						  <h2 style="background-color: rgba(255,255,255,0.2);color:white;font-weight:200;"><%= user.local.calendarID %></h2>
+						  <!-- <a style="font-size:20px;" href="#" class="list-group-item list-group-item-danger"><%= user.local.calendarID %></a> -->
+						</div>
+						<!-- <strong>id</strong>: <%= user._id %><br>
 						<strong>email</strong>: <%= user.local.email %><br>
 						<strong>password</strong>: <%= user.local.password %><br>
-						<strong>calendarID</strong>: <%= user.local.calendarID %>
+						<strong>calendarID</strong>: <%= user.local.calendarID %> -->
 					</p>
-					
-					<a href="/calendar" class="btn btn-default">Go Calendar</a>
+					<div > 
+						<a href="/calendar" class="btn btn-warning">Go Calendar</a>
+						<a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+					</div>
 					<!-- <a href="/unlink/local" class="btn btn-default">Unlink</a> -->
 				<% } else { %>
 					<a href="/connect/local" class="btn btn-default">Connect Local</a>
 				<% } %>
 
-			</div>
+			<!-- </div> -->
 			
 
 		</div>
