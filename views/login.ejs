@@ -12,7 +12,7 @@
 <div class="container">
 <div class="col-sm-6 col-sm-offset-3">
 
-	<h1 style="font-weight:200;color:white;"> Login</h1>
+	<h1 style="font-size:50px;font-weight:100;color:white;"> Login</h1>
 
 	<% if (message.length > 0) { %>
 		<div class="alert alert-danger"><%= message %></div>
@@ -20,11 +20,11 @@
 
 	<!-- LOGIN FORM -->
 	<form action="/login" method="post">
-		<div style="font-weight:200;color:white;" class="form-group">
+		<div style="font-weight:100;color:white;" class="form-group">
 			<!-- <p style="font-size:20px;">Email</p> -->
 			<input type="text" class="form-control" name="email" placeholder="Username">
 		</div>
-		<div style="font-weight:200;color:white;" class="form-group">
+		<div style="font-weight:100;color:white;" class="form-group">
 			<!-- <p style="font-size:20px;">Password</p> -->
 			<input type="password" class="form-control" name="password" placeholder="Password">
 		</div>
@@ -34,9 +34,9 @@
 
 
 	<hr>
-	<span style="color:white;">No acount? </span><a class="btn btn-primary" href="/signup">Signup</a>
+	<span style="font-weight:100;font-size:24px;color:white;">No acount? </span><a class="btn btn-primary" href="/signup">Signup</a>
 	
-	<span style="color:white;">Or go  </span><a style="color:white;" class="btn btn-success" href="/">home</a>
+	<span style="font-weight:100;font-size:24px;color:white;">Or go  </span><a style="color:white;" class="btn btn-success" href="/">Home</a>
 
 </div>
 </div>
